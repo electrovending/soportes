@@ -51,7 +51,7 @@
         <label for="symbol">Cryptocurrency Symbol:</label><br>
         <input type="text" id="symbol" placeholder="e.g., BTCUSDT"><br>
         <label for="limit">Limit of Records:</label><br>
-        <input type="number" id="limit" value="2" min="1" max="10"><br>
+        <input type="number" id="limit" value="2" min="1" max="100"><br> <!-- Cambio en el límite máximo -->
         <button onclick="analyze()">Analyze</button>
         <div id="output"></div>
     </div>
@@ -66,8 +66,8 @@
                 return;
             }
 
-            if (limit < 1 || limit > 10) {
-                alert('Limit must be between 1 and 10.');
+            if (limit < 1 || limit > 100) { // Actualización del rango máximo permitido
+                alert('Limit must be between 1 and 100.'); // Actualización del rango máximo permitido
                 return;
             }
 
