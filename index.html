@@ -13,14 +13,15 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #000; /* Cambio a fondo negro */
+            background-color: #000; /* Fondo negro */
         }
         #container {
             text-align: center;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 8px;
-            background-color: #fff;
+            background-color: #333; /* Fondo gris oscuro */
+            color: #fff; /* Color de texto blanco */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         h1 {
@@ -32,6 +33,10 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
+        input[type="text"], input[type="number"] {
+            background-color: #444; /* Fondo de los inputs gris oscuro */
+            color: #fff; /* Color de texto blanco en los inputs */
+        }
         button {
             background-color: #4caf50;
             color: #fff;
@@ -42,6 +47,12 @@
         }
         #output {
             margin-top: 20px;
+        }
+        .support {
+            color: green;
+        }
+        .resistance {
+            color: red;
         }
     </style>
 </head>
@@ -78,14 +89,14 @@
             const output = document.getElementById('output');
             output.innerHTML = `<h2>Analysis Results</h2>
                                 <p>M15 Analysis:</p>
-                                <p>Minimum support level: ${responseM15.support}</p>
-                                <p>Maximum resistance level: ${responseM15.resistance}</p>
+                                <p>Minimum support level: <span class="support">${responseM15.support}</span></p>
+                                <p>Maximum resistance level: <span class="resistance">${responseM15.resistance}</span></p>
                                 <p>1H Analysis:</p>
-                                <p>Minimum support level: ${response1H.support}</p>
-                                <p>Maximum resistance level: ${response1H.resistance}</p>
+                                <p>Minimum support level: <span class="support">${response1H.support}</span></p>
+                                <p>Maximum resistance level: <span class="resistance">${response1H.resistance}</span></p>
                                 <p>1D Analysis:</p>
-                                <p>Minimum support level: ${response1D.support}</p>
-                                <p>Maximum resistance level: ${response1D.resistance}</p>`;
+                                <p>Minimum support level: <span class="support">${response1D.support}</span></p>
+                                <p>Maximum resistance level: <span class="resistance">${response1D.resistance}</span></p>`;
         }
 
         async function processSymbol(symbol, interval, limit) {
@@ -105,3 +116,6 @@
     </script>
 </body>
 </html>
+
+
+  
